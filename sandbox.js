@@ -109,3 +109,40 @@ let resultOne = greetings();
 
 let resultTwo = name.toUpperCase();    
 console.log(resultTwo);
+
+
+/* ---------------- Foreach Method & Callback function ------------- */
+
+// callback function - function when passed as argument in function then it is calles callback function
+const myFunc = (callbackFunc) => {
+    // do something 
+    let value = 50;
+    callbackFunc(value);
+};
+
+myFunc((a) => console.log(a));
+
+// Foreach Method
+
+let people = ['mario', 'luigi', 'ryu', 'shaun', 'chun-li'];
+
+const logPerson = (person, index) => {
+    console.log(`${index} - hello ${person}`);
+};
+
+// people.forEach(person => console.log(person));
+people.forEach(logPerson);
+
+// Callback functions in action
+
+const ul = document.querySelector('.people');
+
+people = ['mario', 'luigi', 'ryu', 'shaun', 'chun-li'];
+let html = ``;
+
+people.forEach((person) => {
+    html += `<li style="color: purple">${person}</li>`;
+});
+
+console.log(html);
+ul.innerHTML = html;
