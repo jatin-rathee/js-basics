@@ -178,7 +178,9 @@ user = {
     age: 30,
     email: ' crystal@thenetninja.co.uk',
     location: 'berlin',
-    blogs: ['why mac & chees rules', '10 things to make with marmite'],
+    // blogs: ['why mac & chees rules', '10 things to make with marmite'],
+    blogs: [{ title: 'why mac & chees rules', likes: 30 },
+    { title: '10 things to make with marmite', likes: 50 }],
 
     // method in object
     login() {
@@ -186,11 +188,46 @@ user = {
     },
     logBlogs() {
         // can't use a arrow function because 'this' in arrow function is window object not parent object
+        console.log('this user has written the following blogs: ');
         this.blogs.forEach(function(blog) {
-            console.log(blog);
+            console.log(blog.title, blog.likes);
         })
     }
 };
 
 user.login();
 user.logBlogs();
+
+
+
+/* ---------------- Objects in Array ------------- */
+
+
+const blogs = [
+    { title: 'why mac & chees rules', likes: 30 },
+    { title: '10 things to make with marmite', likes: 50 }
+];
+
+console.log(blogs);
+
+
+/* ---------------- Math Object ------------- */
+
+
+console.log(Math);
+console.log(Math.PI);
+console.log(Math.E);
+
+let Area = 7.7;
+
+console.log(Math.round(Area));
+console.log(Math.floor(Area));
+console.log(Math.ceil(Area));
+console.log(Math.trunc(Area));  // removes decimals
+
+// random numbers
+
+const random = Math.random();   // returns a random number b/w 0 and 1
+
+console.log(random);
+console.log(Math.round(random * 100));  // gives a random number b/w 1 and 100
