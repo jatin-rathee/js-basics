@@ -94,3 +94,18 @@ console.log('area is:' , area);
 //     }
 //     return total;
 // }
+
+
+/* ---------------- Functions vs Methods ------------- */
+
+const name = 'shaun';
+
+// functions
+
+const greetings = () => 'hello';
+let resultOne = greetings();
+
+// methods
+
+let resultTwo = name.toUpperCase();    
+console.log(resultTwo);
