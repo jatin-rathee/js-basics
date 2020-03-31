@@ -146,3 +146,51 @@ people.forEach((person) => {
 
 console.log(html);
 ul.innerHTML = html;
+
+
+/* ---------------- Objects ------------- */
+
+let user = {
+    name: 'crystal',
+    age: 30,
+    email: ' crystal@thenetninja.co.uk',
+    location: 'berlin',
+    blogs: ['why mac & chees rules', '10 things to make with marmite']
+};
+
+console.log(user);
+console.log(user.name);
+
+user.age = 35;
+console.log(user.age);
+
+console.log(user['email']);
+
+user['name'] = 'chun-li';
+console.log(user.name);
+
+console.log(typeof user);
+
+// FUNCTIONS INSIDE OBJECT
+
+user = {
+    name: 'crystal',
+    age: 30,
+    email: ' crystal@thenetninja.co.uk',
+    location: 'berlin',
+    blogs: ['why mac & chees rules', '10 things to make with marmite'],
+
+    // method in object
+    login() {
+        console.log('the user logged in '); 
+    },
+    logBlogs() {
+        // can't use a arrow function because 'this' in arrow function is window object not parent object
+        this.blogs.forEach(function(blog) {
+            console.log(blog);
+        })
+    }
+};
+
+user.login();
+user.logBlogs();
